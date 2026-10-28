@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Create a professional resume for free. Build, preview, and download your resume as a PDF in minutes.">
+<title>Free Resume Builder | Create a Professional Resume</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#172033}
+header{background:#10264a;color:white;padding:24px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+header h1{margin:0;font-size:25px}
+header p{margin:8px 0 0;color:#d8e4ff}
+header a{color:white;text-decoration:none}
+.hero{text-align:center;padding:35px 15px 20px}
+.hero h2{font-size:32px;margin:0 0 10px}
+.hero p{color:#586579;line-height:1.6}
+.container{max-width:1250px;margin:20px auto;padding:0 15px;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.panel{background:white;padding:22px;border-radius:14px;box-shadow:0 5px 25px #1b355b12}
+.panel h2{margin-top:0}
+label{display:block;font-size:14px;font-weight:bold;margin:14px 0 6px}
+input,textarea,select{width:100%;padding:11px;border:1px solid #ccd5e2;border-radius:7px;font:inherit;background:white}
+textarea{min-height:90px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button{border:0;border-radius:8px;padding:12px 17px;font-size:15px;font-weight:bold;cursor:pointer}
+.primary{background:#2563eb;color:white}
+.secondary{background:#e8eef9;color:#18325c}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+#resume{background:white;color:#202a3a;padding:32px;min-height:750px;box-shadow:0 2px 12px #0001;overflow-wrap:anywhere}
+#resume h1{font-size:30px;margin:0 0 7px;color:#163b70}
+#resume .contact{font-size:13px;color:#526078;line-height:1.7}
+#resume h3{font-size:15px;text-transform:uppercase;letter-spacing:1px;color:#1d4f91;border-bottom:1px solid #ccd7e6;padding-bottom:6px;margin:23px 0 10px}
+#resume p{font-size:14px;line-height:1.55;margin:7px 0;white-space:pre-line}
+#resume .entry-title{font-weight:bold}
+#resume .muted{color:#68768b;font-size:13px}
+footer{text-align:center;padding:30px 15px;color:#657187;font-size:13px}
+@media(max-width:800px){.container{grid-template-columns:1fr}.hero h2{font-size:26px}#resume{padding:22px}.row{grid-template-columns:1fr}}
+@media print{
+body{background:white}
+body *{visibility:hidden}
+#resume,#resume *{visibility:visible}
+#resume{position:absolute;left:0;top:0;width:100%;min-height:0;padding:20px;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header>
+<div><h1>ResumeCraft</h1><p>Your next opportunity starts here.</p></div>
+<a href="#builder">Build My Resume →</a>
+</header>
+
+<section class="hero">
+<h2>Build Your Professional Resume — Free</h2>
+<p>Create a clean, professional resume in minutes.<br>Enter your details, preview your resume, and save it as a PDF.</p>
+</section>
+
+<main class="container" id="builder">
+<section class="panel">
+<h2>📝 Your Information</h2>
+<form id="resumeForm">
+<label for="name">Full Name</label>
+<input id="name" placeholder="e.g. Alex Johnson" autocomplete="name">
+<div class="row">
+<div><label for="email">Email Address</label><input id="email" type="email" placeholder="alex@example.com" autocomplete="email"></div>
+<div><label for="phone">Phone Number</label><input id="phone" placeholder="e.g. +1 555 123 4567" autocomplete="tel"></div>
+</div>
+<label for="location">City, State</label>
+<input id="location" placeholder="e.g. Austin, Texas">
+<label for="linkedin">LinkedIn Profile (optional)</label>
+<input id="linkedin" placeholder="linkedin.com/in/yourname">
+<label for="summary">Professional Summary</label>
+<textarea id="summary" placeholder="Briefly describe your experience, strengths, and career goals."></textarea>
+<label for="experience">Work Experience</label>
+<textarea id="experience" placeholder="Job Title — Company Name&#10;Month Year – Month Year&#10;Describe your responsibilities and achievements."></textarea>
+<label for="education">Education</label>
+<textarea id="education" placeholder="Degree — School Name&#10;Graduation Year"></textarea>
+<label for="skills">Skills</label>
+<textarea id="skills" placeholder="Communication, Project Management, Excel, Customer Service"></textarea>
+<label for="projects">Projects (optional)</label>
+<textarea id="projects" placeholder="Project name and what you accomplished."></textarea>
+<label for="template">Resume Style</label>
+<select id="template"><option value="classic">Classic Professional</option><option value="modern">Modern Blue</option><option value="simple">Simple Minimal</option></select>
+<div class="actions">
+<button type="button" class="primary" id="download">Download / Save as PDF</button>
+<button type="reset" class="secondary">Clear Form</button>
+</div>
+<p style="font-size:12px;color:#68768b">Tip: Use the PDF option and select “Save as PDF” if your browser opens the print window.</p>
+</form>
+</section>
+
+<section class="panel">
+<h2>👀 Live Resume Preview</h2>
+<div id="resume">
+<h1 id="p-name">Your Name</h1>
+<div class="contact" id="p-contact">Email • Phone • City, State</div>
+<div class="contact" id="p-linkedin"></div>
+<h3>Professional Summary</h3><p id="p-summary">Your professional summary will appear here.</p>
+<h3>Work Experience</h3><p id="p-experience">Your work experience will appear here.</p>
+<h3>Education</h3><p id="p-education">Your education will appear here.</p>
+<h3>Skills</h3><p id="p-skills">Your skills will appear here.</p>
+<div id="projects-section"><h3>Projects</h3><p id="p-projects">Your projects will appear here.</p></div>
+</div>
+<div class="actions"><button type="button" class="secondary" id="print">Print Resume</button></div>
+</section>
+</main>
+
+<footer>
+<p>ResumeCraft — A free resume-building tool for job seekers.</p>
+<p>Review your information carefully before applying for a job.</p>
+</footer>
+
+<script>
+const fields=["name","email","phone","location","linkedin","summary","experience","education","skills","projects"];
+function value(id){return document.getElementById(id).value.trim()}
+function safeText(text){return text.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function updatePreview(){
+document.getElementById("p-name").textContent=value("name")||"Your Name";
+document.getElementById("p-contact").textContent=[value("email"),value("phone"),value("location")].filter(Boolean).join(" • ")||"Email • Phone • City, State";
+document.getElementById("p-linkedin").textContent=value("linkedin");
+document.getElementById("p-summary").textContent=value("summary")||"Your professional summary will appear here.";
+document.getElementById("p-experience").textContent=value("experience")||"Your work experience will appear here.";
+document.getElementById("p-education").textContent=value("education")||"Your education will appear here.";
+document.getElementById("p-skills").textContent=value("skills")||"Your skills will appear here.";
+document.getElementById("p-projects").textContent=value("projects")||"Your projects will appear here.";
+document.getElementById("projects-section").style.display=value("projects")?"block":"none";
+const template=value("template");
+const resume=document.getElementById("resume");
+resume.style.borderTop=template==="modern"?"6px solid #2563eb":template==="simple"?"none":"3px solid #163b70";
+document.getElementById("p-name").style.color=template==="modern"?"#2563eb":template==="simple"?"#222":"#163b70";
+document.querySelectorAll("#resume h3").forEach(h=>h.style.color=template==="modern"?"#2563eb":template==="simple"?"#333":"#1d4f91");
+}
+fields.concat(["template"]).forEach(id=>document.getElementById(id).addEventListener("input",updatePreview));
+document.getElementById("resumeForm").addEventListener("reset",()=>setTimeout(updatePreview,0));
+document.getElementById("download").addEventListener("click",()=>window.print());
+document.getElementById("print").addEventListener("click",()=>window.print());
+updatePreview();
+</script>
+</body>
+</html>
