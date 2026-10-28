@@ -3,137 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Create a professional resume for free. Build, preview, and download your resume as a PDF in minutes.">
-<title>Free Resume Builder | Create a Professional Resume</title>
+<meta name="description" content="Create a professional, ATS-friendly resume in minutes with ResumeCraft. Choose a template, customize your resume, and save it as a PDF for free.">
+<meta name="theme-color" content="#101828">
+<title>ResumeCraft — Free Professional Resume Builder</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#172033}
-header{background:#10264a;color:white;padding:24px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
-header h1{margin:0;font-size:25px}
-header p{margin:8px 0 0;color:#d8e4ff}
-header a{color:white;text-decoration:none}
-.hero{text-align:center;padding:35px 15px 20px}
-.hero h2{font-size:32px;margin:0 0 10px}
-.hero p{color:#586579;line-height:1.6}
-.container{max-width:1250px;margin:20px auto;padding:0 15px;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
-.panel{background:white;padding:22px;border-radius:14px;box-shadow:0 5px 25px #1b355b12}
-.panel h2{margin-top:0}
-label{display:block;font-size:14px;font-weight:bold;margin:14px 0 6px}
-input,textarea,select{width:100%;padding:11px;border:1px solid #ccd5e2;border-radius:7px;font:inherit;background:white}
-textarea{min-height:90px;resize:vertical}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-button{border:0;border-radius:8px;padding:12px 17px;font-size:15px;font-weight:bold;cursor:pointer}
-.primary{background:#2563eb;color:white}
-.secondary{background:#e8eef9;color:#18325c}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-#resume{background:white;color:#202a3a;padding:32px;min-height:750px;box-shadow:0 2px 12px #0001;overflow-wrap:anywhere}
-#resume h1{font-size:30px;margin:0 0 7px;color:#163b70}
-#resume .contact{font-size:13px;color:#526078;line-height:1.7}
-#resume h3{font-size:15px;text-transform:uppercase;letter-spacing:1px;color:#1d4f91;border-bottom:1px solid #ccd7e6;padding-bottom:6px;margin:23px 0 10px}
-#resume p{font-size:14px;line-height:1.55;margin:7px 0;white-space:pre-line}
-#resume .entry-title{font-weight:bold}
-#resume .muted{color:#68768b;font-size:13px}
-footer{text-align:center;padding:30px 15px;color:#657187;font-size:13px}
-@media(max-width:800px){.container{grid-template-columns:1fr}.hero h2{font-size:26px}#resume{padding:22px}.row{grid-template-columns:1fr}}
-@media print{
-body{background:white}
-body *{visibility:hidden}
-#resume,#resume *{visibility:visible}
-#resume{position:absolute;left:0;top:0;width:100%;min-height:0;padding:20px;box-shadow:none}
-}
+:root{--ink:#172033;--muted:#667085;--line:#e5eaf2;--bg:#f5f7fb;--brand:#5b5ce2;--brand2:#7c3aed;--white:#fff;--green:#16865c;--shadow:0 16px 45px rgba(25,35,70,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}button,input,textarea,select{font:inherit}button{cursor:pointer}.topbar{background:#101828;color:#d8def0;font-size:12px;text-align:center;padding:9px 14px}.topbar strong{color:#fff}.nav{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5%,calc((100% - 1280px)/2));gap:20px}.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:850;font-size:21px;letter-spacing:-.7px}.logo-icon{display:grid;place-items:center;width:37px;height:37px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-size:19px;box-shadow:0 5px 12px #5b5ce244}.navlinks{display:flex;align-items:center;gap:25px}.navlinks a{color:#596274;text-decoration:none;font-size:14px;font-weight:600}.navlinks a:hover{color:var(--brand)}.nav-cta,.primary{border:0;background:var(--brand);color:#fff;font-weight:750;border-radius:11px;padding:12px 18px;box-shadow:0 6px 16px #5b5ce22a}.nav-cta:hover,.primary:hover{background:#4849c8}.hero{max-width:1280px;margin:auto;padding:58px 24px 40px;display:grid;grid-template-columns:1fr .8fr;align-items:center;gap:50px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #dedfff;border-radius:999px;background:#efefff;color:#4b4dc8;padding:7px 12px;font-size:12px;font-weight:800;letter-spacing:.4px}.eyebrow span{width:7px;height:7px;border-radius:50%;background:#6d5dfc}.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.05;letter-spacing:-2.7px;margin:20px 0 18px;max-width:660px}.gradient-text{background:linear-gradient(90deg,#5b5ce2,#9b51e0);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:17px;line-height:1.75;max-width:580px;margin:0 0 25px}.hero-actions{display:flex;align-items:center;gap:15px;flex-wrap:wrap}.primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;padding:14px 21px}.secondary{display:inline-flex;align-items:center;justify-content:center;border:1px solid #d9deea;background:#fff;color:#293247;border-radius:11px;padding:13px 18px;text-decoration:none;font-weight:750}.trust{display:flex;gap:16px;flex-wrap:wrap;margin-top:23px;color:#667085;font-size:12px}.trust span:before{content:"✓";color:var(--green);font-weight:900;margin-right:6px}.hero-visual{min-height:340px;position:relative;display:grid;place-items:center}.glow{position:absolute;width:300px;height:300px;border-radius:50%;background:linear-gradient(135deg,#e3e3ff,#f0ddff);filter:blur(3px)}.mock-resume{position:relative;background:#fff;width:min(330px,90%);min-height:365px;padding:27px 29px;box-shadow:0 25px 70px #24264a22;transform:rotate(3deg);border-radius:7px;border:1px solid #e8eaf3}.mock-resume h3{margin:0 0 5px;font-size:22px;letter-spacing:-.5px}.mock-resume .mini-contact{font-size:9px;color:#667085;border-bottom:2px solid #5b5ce2;padding-bottom:13px}.mock-resume h4{font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:17px 0 8px;color:#5b5ce2}.mock-line{height:5px;border-radius:3px;background:#e6e9f1;margin:7px 0}.mock-line.w80{width:80%}.mock-line.w65{width:65%}.mock-line.w92{width:92%}.mock-line.w50{width:50%}.float-card{position:absolute;bottom:27px;right:-4px;background:#fff;border:1px solid #e8eaf3;border-radius:14px;padding:13px 16px;box-shadow:var(--shadow);font-size:12px;font-weight:800}.float-card span{display:block;color:var(--green);font-size:11px;font-weight:650;margin-top:4px}.feature-strip{max-width:1180px;margin:0 auto 38px;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.feature{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px}.feature-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:#f0efff;font-size:19px;flex-shrink:0}.feature strong{display:block;font-size:13px}.feature small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.builder-section{background:#fff;border-top:1px solid var(--line);padding:55px 24px 70px}.section-head{text-align:center;max-width:680px;margin:0 auto 30px}.section-head .eyebrow{margin-bottom:12px}.section-head h2{font-size:clamp(29px,4vw,42px);letter-spacing:-1.5px;margin:6px 0 12px}.section-head p{color:var(--muted);line-height:1.7;margin:0}.builder{max-width:1280px;margin:auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:23px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 28px #26324a08}.panel-head{padding:19px 21px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.panel-head h3{margin:0;font-size:16px}.step-label{font-size:11px;color:var(--muted);font-weight:700}.form-body{padding:21px}.form-section{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #edf0f5}.form-section:last-child{border:0;margin:0;padding:0}.form-title{font-size:13px;font-weight:850;margin:0 0 14px;display:flex;align-items:center;gap:8px}.form-title span{width:25px;height:25px;display:grid;place-items:center;background:#efefff;color:#5656d9;border-radius:8px;font-size:12px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field:last-child{margin-bottom:0}.field label{font-size:11px;color:#4e596d;font-weight:750}.field input,.field textarea,.field select{width:100%;border:1px solid #dfe4ed;border-radius:9px;background:#fff;padding:11px 12px;outline:none;color:var(--ink);font-size:13px;transition:border .15s,box-shadow .15s}.field input:focus,.field textarea:focus,.field select:focus{border-color:#7777ed;box-shadow:0 0 0 3px #5b5ce214}.field textarea{min-height:82px;resize:vertical;line-height:1.55}.field textarea.tall{min-height:110px}.helper{color:#8a93a4;font-size:10px;line-height:1.5}.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.form-actions button{flex:1}.outline-btn{border:1px solid #dfe4ed;background:#fff;color:#344054;border-radius:10px;padding:12px;font-weight:750}.preview-panel{position:sticky;top:16px}.preview-tools{display:flex;align-items:center;gap:8px}.preview-tools select{max-width:125px;border:1px solid #dfe4ed;border-radius:8px;padding:8px;font-size:11px;background:#fff}.preview-tools button{border:0;border-radius:9px;background:var(--brand);color:white;padding:9px 12px;font-size:11px;font-weight:800}.preview-canvas{background:#e9edf5;padding:22px;overflow:auto;min-height:690px}.resume-paper{background:#fff;width:100%;max-width:650px;min-height:840px;margin:auto;padding:44px 48px;box-shadow:0 4px 18px #27314b13;color:#202838;font-family:Arial,sans-serif;font-size:11px;line-height:1.55;overflow-wrap:anywhere}.resume-header{border-bottom:2px solid #333;padding-bottom:14px;margin-bottom:16px}.resume-name{font-size:28px;line-height:1.15;font-weight:800;letter-spacing:-.5px;margin:0 0 7px}.resume-contact{color:#5c6574;font-size:10px;display:flex;flex-wrap:wrap;gap:4px 10px}.resume-summary{margin:0 0 15px;color:#424b5b}.resume-section{margin:15px 0 0}.resume-section h3{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid #aab0bb;padding-bottom:5px;margin:0 0 8px}.resume-section p{white-space:pre-line;margin:0 0 7px}.resume-item{margin:0 0 10px}.resume-item-head{display:flex;justify-content:space-between;gap:10px;font-weight:750}.resume-item-sub{color:#586274;font-style:italic;margin:2px 0 4px}.resume-item-desc{white-space:pre-line}.resume-skills{margin:0;white-space:pre-line}.resume-paper.style-modern .resume-header{border-bottom:0;border-left:5px solid #5b5ce2;padding:0 0 0 13px}.resume-paper.style-modern .resume-name{color:#4f50d6}.resume-paper.style-modern .resume-section h3{color:#5556d7;border-color:#d9d9ff}.resume-paper.style-simple{font-family:Georgia,serif}.resume-paper.style-simple .resume-name{font-family:Georgia,serif;font-weight:500}.resume-paper.style-simple .resume-header{text-align:center}.resume-paper.style-simple .resume-contact{justify-content:center}.resume-paper.style-creative .resume-header{background:#202a44;color:white;padding:18px;border-radius:3px;border:0}.resume-paper.style-creative .resume-contact{color:#e4e8f2}.resume-paper.style-creative .resume-section h3{color:#5b5ce2}.templates{max-width:1120px;margin:38px auto 0;padding:0 24px}.templates h3{text-align:center;font-size:24px;letter-spacing:-.7px;margin:0 0 8px}.templates>p{text-align:center;color:var(--muted);font-size:13px;margin:0 0 22px}.template-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.template-card{border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px;text-align:left;transition:.18s}.template-card:hover,.template-card.active{border-color:#7979eb;box-shadow:0 0 0 3px #5b5ce20e;transform:translateY(-2px)}.template-thumb{height:145px;background:#f5f6fa;border:1px solid #eaedf3;padding:14px;display:flex;flex-direction:column;gap:8px;margin-bottom:12px}.thumb-head{height:19px;width:70%;background:#ccd2df;border-radius:2px}.thumb-line{height:4px;background:#dce1eb;width:100%;border-radius:3px}.thumb-line.short{width:65%}.thumb-rule{height:2px;background:#a9afc1;margin:3px 0}.template-card strong{font-size:12px;display:block}.template-card small{font-size:10px;color:var(--muted);display:block;margin-top:4px}.template-card.active strong:after{content:" ✓";color:var(--brand)}.how{padding:56px 24px;background:#f5f7fb}.how-inner{max-width:1100px;margin:auto}.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:26px}.how-card{padding:23px;background:#fff;border:1px solid var(--line);border-radius:15px}.number{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#efefff;color:#5656d9;font-weight:850}.how-card h3{font-size:15px;margin:15px 0 7px}.how-card p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}.faq{background:#fff;padding:56px 24px}.faq-inner{max-width:800px;margin:auto}.faq details{border-bottom:1px solid var(--line);padding:17px 0}.faq summary{font-size:14px;font-weight:750;cursor:pointer}.faq details p{font-size:13px;color:var(--muted);line-height:1.7}.cta-band{max-width:1150px;margin:48px auto;padding:0 24px}.cta-box{border-radius:22px;background:linear-gradient(120deg,#22264a,#4d45a8);padding:36px;color:white;display:flex;align-items:center;justify-content:space-between;gap:20px}.cta-box h2{font-size:28px;letter-spacing:-1px;margin:0 0 8px}.cta-box p{color:#e0e2ff;margin:0;font-size:13px;line-height:1.7}.cta-box a{background:#fff;color:#3637a0;white-space:nowrap;box-shadow:none}.footer{background:#101828;color:#c5ccda;padding:38px 24px}.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footer .logo{color:#fff}.footer p{font-size:12px;line-height:1.7;color:#9ca7ba;max-width:360px}.footer-links{display:flex;gap:18px;flex-wrap:wrap;align-items:center}.footer-links a{color:#c5ccda;text-decoration:none;font-size:12px}.footer-links a:hover{color:white}.copyright{max-width:1180px;margin:25px auto 0;padding-top:18px;border-top:1px solid #293346;color:#8f9aaf;font-size:11px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#182238;color:#fff;padding:12px 18px;border-radius:10px;font-size:13px;box-shadow:var(--shadow);z-index:20;display:none}.toast.show{display:block}
+@media(max-width:900px){.hero{grid-template-columns:1fr .7fr;gap:20px}.feature-strip{grid-template-columns:repeat(2,1fr)}.builder{grid-template-columns:1fr}.preview-panel{position:static}.preview-canvas{min-height:unset}.template-grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:13px}.navlinks a:not(.nav-cta){display:none}}
+@media(max-width:600px){.nav{height:66px;padding:0 17px}.logo{font-size:19px}.nav-cta{padding:10px 12px;font-size:12px}.hero{padding:40px 20px 26px;grid-template-columns:1fr}.hero h1{font-size:43px;letter-spacing:-1.8px}.hero p{font-size:15px}.hero-visual{min-height:300px}.mock-resume{width:275px;min-height:330px}.glow{width:240px;height:240px}.float-card{right:5px;bottom:10px}.feature-strip{padding:0 17px;gap:9px}.feature{padding:12px;gap:8px}.feature-icon{width:33px;height:33px;font-size:16px}.feature strong{font-size:11px}.feature small{font-size:10px}.builder-section{padding:42px 14px 48px}.section-head h2{font-size:31px}.form-body{padding:15px}.panel-head{padding:15px}.grid2{grid-template-columns:1fr}.preview-canvas{padding:10px}.resume-paper{padding:25px 22px;min-height:600px;font-size:10px}.resume-name{font-size:23px}.template-grid{gap:9px}.template-card{padding:8px}.template-thumb{height:120px;padding:10px}.how-grid{grid-template-columns:1fr}.cta-band{padding:0 15px;margin:28px auto}.cta-box{padding:25px;align-items:flex-start;flex-direction:column}.cta-box h2{font-size:25px}.footer-inner{flex-direction:column}.preview-tools select{max-width:105px}.preview-tools button{padding:9px;font-size:10px}}
+@media print{body{background:#fff}.topbar,.nav,.hero,.feature-strip,.builder-section .section-head,.form-panel,.templates,.how,.faq,.cta-band,.footer,.panel-head,.preview-tools{display:none!important}.builder-section{padding:0!important;border:0}.builder{display:block!important;max-width:none!important}.preview-panel{position:static!important;border:0!important;box-shadow:none!important}.preview-canvas{padding:0!important;background:#fff!important;overflow:visible!important;min-height:0!important}.resume-paper{max-width:none!important;width:100%!important;min-height:0!important;margin:0!important;padding:12mm 13mm!important;box-shadow:none!important;border:0!important;font-size:10pt!important;line-height:1.4!important}.resume-name{font-size:24pt!important}.resume-section{break-inside:avoid}.resume-item{break-inside:avoid}@page{size:A4;margin:0}}
 </style>
 </head>
 <body>
-<header>
-<div><h1>ResumeCraft</h1><p>Your next opportunity starts here.</p></div>
-<a href="#builder">Build My Resume →</a>
+<div class="topbar">✦ <strong>Free forever.</strong> Build a polished resume and save it as a PDF — no account required.</div>
+<header class="nav">
+  <a class="logo" href="#" aria-label="ResumeCraft home"><span class="logo-icon">R</span>ResumeCraft</a>
+  <nav class="navlinks" aria-label="Main navigation">
+    <a href="#templates">Templates</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a>
+    <a class="nav-cta" href="#builder">Build my resume ↗</a>
+  </nav>
 </header>
-
+<main>
 <section class="hero">
-<h2>Build Your Professional Resume — Free</h2>
-<p>Create a clean, professional resume in minutes.<br>Enter your details, preview your resume, and save it as a PDF.</p>
+  <div>
+    <span class="eyebrow"><span></span> YOUR NEXT CHAPTER STARTS HERE</span>
+    <h1>A resume that gets you <span class="gradient-text">noticed.</span></h1>
+    <p>Create a clean, professional resume in minutes. Choose a design, add your experience, and save a polished PDF — all for free, right in your browser.</p>
+    <div class="hero-actions"><a class="primary" href="#builder">Create my resume <span>→</span></a><a class="secondary" href="#templates">Explore templates</a></div>
+    <div class="trust"><span>No signup required</span><span>PDF-ready layout</span><span>Privacy-friendly</span></div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="glow"></div>
+    <div class="mock-resume"><h3>Jordan Taylor</h3><div class="mini-contact">jordan.taylor@email.com · New York, NY · linkedin.com/in/jordantaylor</div><h4>Professional Summary</h4><div class="mock-line w92"></div><div class="mock-line w80"></div><div class="mock-line w65"></div><h4>Experience</h4><div class="mock-line w80"></div><div class="mock-line w92"></div><div class="mock-line w92"></div><div class="mock-line w65"></div><h4>Education</h4><div class="mock-line w80"></div><div class="mock-line w50"></div><h4>Skills</h4><div class="mock-line w92"></div></div>
+    <div class="float-card">✦ Looks professional<span>✓ Clean, readable format</span></div>
+  </div>
 </section>
-
-<main class="container" id="builder">
-<section class="panel">
-<h2>📝 Your Information</h2>
-<form id="resumeForm">
-<label for="name">Full Name</label>
-<input id="name" placeholder="e.g. Alex Johnson" autocomplete="name">
-<div class="row">
-<div><label for="email">Email Address</label><input id="email" type="email" placeholder="alex@example.com" autocomplete="email"></div>
-<div><label for="phone">Phone Number</label><input id="phone" placeholder="e.g. +1 555 123 4567" autocomplete="tel"></div>
-</div>
-<label for="location">City, State</label>
-<input id="location" placeholder="e.g. Austin, Texas">
-<label for="linkedin">LinkedIn Profile (optional)</label>
-<input id="linkedin" placeholder="linkedin.com/in/yourname">
-<label for="summary">Professional Summary</label>
-<textarea id="summary" placeholder="Briefly describe your experience, strengths, and career goals."></textarea>
-<label for="experience">Work Experience</label>
-<textarea id="experience" placeholder="Job Title — Company Name&#10;Month Year – Month Year&#10;Describe your responsibilities and achievements."></textarea>
-<label for="education">Education</label>
-<textarea id="education" placeholder="Degree — School Name&#10;Graduation Year"></textarea>
-<label for="skills">Skills</label>
-<textarea id="skills" placeholder="Communication, Project Management, Excel, Customer Service"></textarea>
-<label for="projects">Projects (optional)</label>
-<textarea id="projects" placeholder="Project name and what you accomplished."></textarea>
-<label for="template">Resume Style</label>
-<select id="template"><option value="classic">Classic Professional</option><option value="modern">Modern Blue</option><option value="simple">Simple Minimal</option></select>
-<div class="actions">
-<button type="button" class="primary" id="download">Download / Save as PDF</button>
-<button type="reset" class="secondary">Clear Form</button>
-</div>
-<p style="font-size:12px;color:#68768b">Tip: Use the PDF option and select “Save as PDF” if your browser opens the print window.</p>
-</form>
+<section class="feature-strip" aria-label="Benefits">
+  <div class="feature"><div class="feature-icon">📄</div><div><strong>PDF-ready</strong><small>Print or save as PDF</small></div></div>
+  <div class="feature"><div class="feature-icon">🎨</div><div><strong>4 clean styles</strong><small>Pick the look you like</small></div></div>
+  <div class="feature"><div class="feature-icon">⚡</div><div><strong>Live preview</strong><small>See edits as you type</small></div></div>
+  <div class="feature"><div class="feature-icon">🔒</div><div><strong>In your browser</strong><small>No account needed</small></div></div>
 </section>
-
-<section class="panel">
-<h2>👀 Live Resume Preview</h2>
-<div id="resume">
-<h1 id="p-name">Your Name</h1>
-<div class="contact" id="p-contact">Email • Phone • City, State</div>
-<div class="contact" id="p-linkedin"></div>
-<h3>Professional Summary</h3><p id="p-summary">Your professional summary will appear here.</p>
-<h3>Work Experience</h3><p id="p-experience">Your work experience will appear here.</p>
-<h3>Education</h3><p id="p-education">Your education will appear here.</p>
-<h3>Skills</h3><p id="p-skills">Your skills will appear here.</p>
-<div id="projects-section"><h3>Projects</h3><p id="p-projects">Your projects will appear here.</p></div>
-</div>
-<div class="actions"><button type="button" class="secondary" id="print">Print Resume</button></div>
+<section class="builder-section" id="builder">
+  <div class="section-head"><span class="eyebrow"><span></span> THE RESUME BUILDER</span><h2>Your experience. Your next opportunity.</h2><p>Fill in the details below. Your resume preview updates automatically. When you're ready, choose Print / Save PDF.</p></div>
+  <div class="builder">
+    <div class="panel form-panel">
+      <div class="panel-head"><h3>✍️ Resume details</h3><span class="step-label">EDIT YOUR CONTENT</span></div>
+      <div class="form-body">
+        <form id="resumeForm">
+          <div class="form-section">
+            <h4 class="form-title"><span>1</span> Personal information</h4>
+            <div class="field"><label for="fullName">Full name *</label><input id="fullName" name="fullName" placeholder="e.g. Jordan Taylor" value="Jordan Taylor" required></div>
+            <div class="grid2">
+              <div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="you@email.com" value="jordan.taylor@email.com"></div>
+              <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" placeholder="(555) 123-4567" value="(555) 123-4567"></div>
+            </div>
+            <div class="grid2">
+              <div class="field"><label for="location">City, State</label><input id="location" placeholder="Austin, TX" value="New York, NY"></div>
+              <div class="field"><label for="linkedin">LinkedIn / Portfolio</label><input id="linkedin" placeholder="linkedin.com/in/you" value="linkedin.com/in/jordantaylor"></div>
+            </div>
+          </div>
+          <div class="form-section">
+            <h4 class="form-title"><span>2</span> Professional summary</h4>
+            <div class="field"><label for="summary">Short introduction</label><textarea id="summary" placeholder="Summarize your experience, strengths, and goals...">Organized and results-driven professional with experience collaborating across teams, solving problems, and delivering high-quality work. Eager to bring strong communication and analytical skills to a growing team.</textarea><span class="helper">Tip: Aim for 2–4 concise sentences tailored to the role.</span></div>
+          </div>
+          <div class="form-section">
+            <h4 class="form-title"><span>3</span> Work experience</h4>
+            <div class="field"><label for="jobTitle">Job title</label><input id="jobTitle" placeholder="e.g. Marketing Coordinator" value="Marketing Coordinator"></div>
+            <div class="grid2">
+              <div class="field"><label for="company">Company</label><input id="company" placeholder="Company name" value="BrightPath Studio"></div>
+              <div class="field"><label for="dates">Dates</label><input id="dates" placeholder="Jan 2022 – Present" value="Jan 2022 – Present"></div>
+            </div>
+            <div class="field"><label for="workDesc">Responsibilities & achievements</label><textarea class="tall" id="workDesc" placeholder="Use bullet points; include measurable results where possible.">Coordinated campaigns and content calendars across multiple channels.
+Collaborated with a cross-functional team to improve project delivery.
+Reviewed performance reports and shared recommendations with stakeholders.</textarea></div>
+          </div>
+          <div class="form-section">
+            <h4 class="form-title"><span>4</span> Education</h4>
+            <div class="field"><label for="degree">Degree / qualification</label><input id="degree" placeholder="e.g. B.S. in Business Administration" value="B.A. in Communications"></div>
+            <div class="grid2">
+              <div class="field"><label for="school">School / university</label><input id="school" placeholder="School name" value="State University"></div>
+              <div class="field"><label for="gradDate">Graduation year</label><input id="gradDate" placeholder="e.g. 2021" value="2021"></div>
+            </div>
+          </div>
+          <div class="form-section">
+            <h4 class="form-title"><span>5</span> Skills & projects</h4>
+            <div class="field"><label for="skills">Key skills</label><textarea id="skills" placeholder="e.g. Project management, Excel, communication">Project coordination · Content strategy · Data analysis · Microsoft Excel · Communication · Team collaboration</textarea></div>
+            <div class="field"><label for="projects">Projects, certifications, or additional details</label><textarea id="projects" placeholder="Add relevant projects, certifications, volunteer work, or awards...">Google Analytics Certification — 2023
+Campaign reporting dashboard: built a monthly performance tracker to help the team identify trends.</textarea></div>
+          </div>
+          <div class="form-actions"><button type="button" class="primary" id="downloadBtn">↓ Print / Save PDF</button><button type="button" class="outline-btn" id="clearBtn">Clear form</button></div>
+          <p class="helper" style="margin-top:12px">Your entries stay in this page while you use it. This demo does not upload your resume to a server. Save your PDF before closing or refreshing the page.</p>
+        </form>
+      </div>
+    </div>
+    <div class="panel preview-panel">
+      <div class="panel-head"><h3>👀 Live preview</h3><div class="preview-tools"><select id="styleSelect" aria-label="Choose resume style"><option value="classic">Classic</option><option value="modern">Modern</option><option value="simple">Minimal</option><option value="creative">Bold</option></select><button type="button" id="previewDownload">Save PDF ↗</button></div></div>
+      <div class="preview-canvas"><article class="resume-paper style-classic" id="resumePreview" aria-label="Resume preview">
+        <header class="resume-header"><h1 class="resume-name" id="pName">Jordan Taylor</h1><div class="resume-contact" id="pContact"><span>jordan.taylor@email.com</span><span>(555) 123-4567</span><span>New York, NY</span><span>linkedin.com/in/jordantaylor</span></div></header>
+        <p class="resume-summary" id="pSummary"></p>
+        <section class="resume-section"><h3>Professional Experience</h3><div class="resume-item"><div class="resume-item-head"><span id="pJob">Marketing Coordinator</span><span id="pDates">Jan 2022 – Present</span></div><div class="resume-item-sub" id="pCompany">BrightPath Studio</div><div class="resume-item-desc" id="pWork"></div></div></section>
+        <section class="resume-section"><h3>Education</h3><div class="resume-item"><div class="resume-item-head"><span id="pDegree">B.A. in Communications</span><span id="pGrad">2021</span></div><div class="resume-item-sub" id="pSchool">State University</div></div></section>
+        <section class="resume-section"><h3>Skills</h3><p class="resume-skills" id="pSkills"></p></section>
+        <section class="resume-section" id="pProjectsSection"><h3>Projects & Certifications</h3><p id="pProjects"></p></section>
+      </article></div>
+    </div>
+  </div>
+  <div class="templates" id="templates"><h3>Find your resume style</h3><p>Choose a clean design. Your content stays the same when you switch styles.</p>
+    <div class="template-grid">
+      <button type="button" class="template-card active" data-style="classic"><div class="template-thumb"><div class="thumb-head"></div><div class="thumb-rule"></div><div class="thumb-line"></div><div class="thumb-line short"></div><div class="thumb-rule"></div><div class="thumb-line"></div><div class="thumb-line short"></div><div class="thumb-rule"></div><div class="thumb-line"></div></div><strong>Classic</strong><small>Traditional & ATS-friendly</small></button>
+      <button type="button" class="template-card" data-style="modern"><div class="template-thumb"><div class="thumb-head" style="background:#7777e7"></div><div class="thumb-line"></div><div class="thumb-line short"></div><div class="thumb-rule" style="background:#aaaaff"></div><div class="thumb-line"></div><div class="thumb-line short"></div><div class="thumb-rule" style="background:#aaaaff"></div><div class="thumb-line"></div></div><strong>Modern</strong><small>Clean with a color accent</small></button>
+      <button type="button" class="template-card" data-style="simple"><div class="template-thumb" style="font-family:Georgia,serif"><div class="thumb-head" style="margin:auto"></div><div class="thumb-line"></div><div class="thumb-line short" style="margin:auto"></div><div class="thumb-rule"></div><div class="thumb-line"></div><div class="thumb-line short"></div><div class="thumb-rule"></div><div class="thumb-line"></div></div><strong>Minimal</strong><small>Elegant & understated</small></button>
+      <button type="button" class="template-card" data-style="creative"><div class="template-thumb"><div class="thumb-head" style="background:#28314a;width:100%;height:28px"></div><div class="thumb-line"></div><div class="thumb-line short"></div><div class="thumb-rule" style="background:#8888ee"></div><div class="thumb-line"></div><div class="thumb-line short"></div><div class="thumb-rule" style="background:#8888ee"></div><div class="thumb-line"></div></div><strong>Bold</strong><small>Distinctive and confident</small></button>
+    </div>
+  </div>
 </section>
+<section class="how" id="how-it-works"><div class="how-inner"><div class="section-head"><span class="eyebrow"><span></span> SIMPLE BY DESIGN</span><h2>From blank page to ready-to-send</h2><p>No complicated editor. Just add your details, pick a style, and save your resume.</p></div><div class="how-grid"><div class="how-card"><div class="number">01</div><h3>Add your details</h3><p>Enter your contact information, summary, work experience, education, and relevant skills.</p></div><div class="how-card"><div class="number">02</div><h3>Choose a template</h3><p>Switch between four readable styles and see your changes instantly in the preview.</p></div><div class="how-card"><div class="number">03</div><h3>Save as PDF</h3><p>Use your browser's print dialog and select “Save as PDF” to create a file you can send to employers.</p></div></div></div></section>
+<section class="faq" id="faq"><div class="faq-inner"><div class="section-head"><span class="eyebrow"><span></span> GOOD TO KNOW</span><h2>Frequently asked questions</h2><p>Quick answers before you start building.</p></div><details><summary>Is ResumeCraft free to use?</summary><p>Yes. This version is free to use and does not require an account. Your browser handles the print-to-PDF step.</p></details><details><summary>How do I download my resume?</summary><p>Click “Print / Save PDF” or “Save PDF”, then select “Save as PDF” as the destination in your browser's print window and save the file.</p></details><details><summary>Is my information uploaded anywhere?</summary><p>This static builder processes the information in your browser and does not send it to a resume server. Avoid using a shared computer if you are entering personal information.</p></details><details><summary>Will this guarantee an interview?</summary><p>No resume can guarantee an interview. Tailor your content to each role, use accurate information, and highlight relevant achievements and measurable outcomes.</p></details><details><summary>What does ATS-friendly mean?</summary><p>ATS-friendly resumes use clear headings and readable text. The Classic and Minimal styles are designed to be simple, but no template can guarantee how every applicant tracking system will parse a document.</p></details></div></section>
+<section class="cta-band"><div class="cta-box"><div><h2>Ready for your next opportunity?</h2><p>Build a resume that puts your experience front and center.<br>Start now — no signup, no payment, no fuss.</p></div><a class="primary" href="#builder">Build my resume →</a></div></section>
 </main>
-
-<footer>
-<p>ResumeCraft — A free resume-building tool for job seekers.</p>
-<p>Review your information carefully before applying for a job.</p>
-</footer>
-
+<footer class="footer"><div class="footer-inner"><div><a class="logo" href="#"><span class="logo-icon">R</span>ResumeCraft</a><p>A simple, free resume builder to help you present your experience clearly and confidently. Create your resume in your browser and save it as a PDF.</p></div><div class="footer-links"><a href="#builder">Resume Builder</a><a href="#templates">Templates</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><a href="mailto:hello@example.com">Contact</a></div></div><div class="copyright">© <span id="year"></span> ResumeCraft. All rights reserved. <span style="float:right">Made to help your next step.</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-const fields=["name","email","phone","location","linkedin","summary","experience","education","skills","projects"];
-function value(id){return document.getElementById(id).value.trim()}
-function safeText(text){return text.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function updatePreview(){
-document.getElementById("p-name").textContent=value("name")||"Your Name";
-document.getElementById("p-contact").textContent=[value("email"),value("phone"),value("location")].filter(Boolean).join(" • ")||"Email • Phone • City, State";
-document.getElementById("p-linkedin").textContent=value("linkedin");
-document.getElementById("p-summary").textContent=value("summary")||"Your professional summary will appear here.";
-document.getElementById("p-experience").textContent=value("experience")||"Your work experience will appear here.";
-document.getElementById("p-education").textContent=value("education")||"Your education will appear here.";
-document.getElementById("p-skills").textContent=value("skills")||"Your skills will appear here.";
-document.getElementById("p-projects").textContent=value("projects")||"Your projects will appear here.";
-document.getElementById("projects-section").style.display=value("projects")?"block":"none";
-const template=value("template");
-const resume=document.getElementById("resume");
-resume.style.borderTop=template==="modern"?"6px solid #2563eb":template==="simple"?"none":"3px solid #163b70";
-document.getElementById("p-name").style.color=template==="modern"?"#2563eb":template==="simple"?"#222":"#163b70";
-document.querySelectorAll("#resume h3").forEach(h=>h.style.color=template==="modern"?"#2563eb":template==="simple"?"#333":"#1d4f91");
-}
-fields.concat(["template"]).forEach(id=>document.getElementById(id).addEventListener("input",updatePreview));
-document.getElementById("resumeForm").addEventListener("reset",()=>setTimeout(updatePreview,0));
-document.getElementById("download").addEventListener("click",()=>window.print());
-document.getElementById("print").addEventListener("click",()=>window.print());
-updatePreview();
+(function(){
+ const $=id=>document.getElementById(id);
+ const fields=['fullName','email','phone','location','linkedin','summary','jobTitle','company','dates','workDesc','degree','school','gradDate','skills','projects'];
+ const map={fullName:'pName',summary:'pSummary',jobTitle:'pJob',dates:'pDates',company:'pCompany',workDesc:'pWork',degree:'pDegree',gradDate:'pGrad',school:'pSchool',skills:'pSkills',projects:'pProjects'};
+ function setText(id,value,placeholder){const el=$(id);el.textContent=(value||'').trim()||placeholder||'';}
+ function update(){
+  Object.keys(map).forEach(k=>setText(map[k],$(k).value, k==='fullName'?'Your Name':''));
+  const contact=['email','phone','location','linkedin'].map(k=>$(k).value.trim()).filter(Boolean);
+  $('pContact').replaceChildren(...contact.map(value=>{const s=document.createElement('span');s.textContent=value;return s;}));
+  $('pProjectsSection').style.display=$('projects').value.trim()?'':'none';
+  $('pSummary').style.display=$('summary').value.trim()?'':'none';
+  $('pWork').style.display=$('workDesc').value.trim()?'':'none';
+  $('pSkills').style.display=$('skills').value.trim()?'':'none';
+  document.title=(($('fullName').value.trim()||'Your')+' — Resume | ResumeCraft');
+ }
+ fields.forEach(id=>$(id).addEventListener('input',update));
+ function applyStyle(style){
+  $('resumePreview').className='resume-paper style-'+style;
+  $('styleSelect').value=style;
+  document.querySelectorAll('.template-card').forEach(card=>card.classList.toggle('active',card.dataset.style===style));
+ }
+ $('styleSelect').addEventListener('change',e=>applyStyle(e.target.value));
+ document.querySelectorAll('.template-card').forEach(card=>card.addEventListener('click',()=>{applyStyle(card.dataset.style);$('builder').scrollIntoView({behavior:'smooth',block:'start'});}));
+ function printResume(){update();window.print();}
+ $('downloadBtn').addEventListener('click',printResume);
+ $('previewDownload').addEventListener('click',printResume);
+ $('clearBtn').addEventListener('click',()=>{
+  if(!confirm('Clear all resume fields? This cannot be undone.'))return;
+  fields.forEach(id=>$(id).value='');
+  update();showToast('Form cleared. Add your details to build your resume.');
+  $('fullName').focus();
+ });
+ let toastTimer;
+ function showToast(message){const t=$('toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2800);}
+ $('year').textContent=new Date().getFullYear();
+ update();
+})();
 </script>
 </body>
 </html>
