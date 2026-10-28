@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://resumecraft-bys.pages.dev/sitemap.xml
